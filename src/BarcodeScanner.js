@@ -16,8 +16,11 @@ export default function BarcodeScanner({ showAlertModel, onClose }) {
     const onSuccess = e => {
         console.log('Data()()', e);
         if (e.data) {
-            Alert.alert('Your Code is', e.data);
-            onClose()
+            Alert.alert('Your Code is', e.data, [
+                { text: 'OK', onPress: () => onClose() },
+            ]);
+            //Alert.alert('Your Code is', e.data);
+            
         }
         // Linking.openURL(e.data).catch(err =>
         //   console.error('An error occured', err),
@@ -34,8 +37,8 @@ export default function BarcodeScanner({ showAlertModel, onClose }) {
             onBackdropPress={onClose}>
             <View style={{ backgroundColor: 'white', height: '70%' }}>
                 <View>
-                    <TouchableOpacity onPress={() => onClose()} style={{backgroundColor: '#009688', width: '20%',margin:5}}>
-                        <Text style={{textAlign:'center'}}>Close</Text>
+                    <TouchableOpacity onPress={() => onClose()} style={{ backgroundColor: '#009688', width: '20%', margin: 5 }}>
+                        <Text style={{ textAlign: 'center' }}>Close</Text>
                     </TouchableOpacity>
                 </View>
                 <QRCodeScanner
