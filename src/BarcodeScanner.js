@@ -18,9 +18,7 @@ export default function BarcodeScanner({ showAlertModel, onClose }) {
         if (e.data) {
             Alert.alert('Your Code is', e.data, [
                 { text: 'OK', onPress: () => onClose() },
-            ]);
-            //Alert.alert('Your Code is', e.data);
-            
+            ]);            
         }
         // Linking.openURL(e.data).catch(err =>
         //   console.error('An error occured', err),

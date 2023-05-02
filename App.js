@@ -1,36 +1,24 @@
-import React, { useState } from 'react';
-import BarcodeScanner from './src/BarcodeScanner';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './src/HomeScreen';
+import GenerateQRCode from './src/GenerateQRCode';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [showModal, setShowModal] = useState(false);
 
-  const onClose=()=>{
-    setShowModal(false)
-  }
   return (
-    <View style={{flex: 1, alignItems: 'center'}}>
-      <TouchableOpacity onPress={() => setShowModal(!showModal)} style={styles.buttonstyle}>
-        <Text style={styles.textStyle}>Press Button to Scan QR code</Text>
-      </TouchableOpacity>
-      <BarcodeScanner showAlertModel={showModal} onClose={onClose}/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen name="GenerateQRCode" component={GenerateQRCode} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  buttonstyle: {
-    backgroundColor: '#009688',
-    width: '60%',
-    alignSelf: 'center',
-    height: '6%',
-    marginTop: '50%',
-    borderRadius: 5,
-    elevation: 8,
-  },
-  textStyle: {
-    textAlign: 'center',
-    padding: '5%',
-    color: 'black',
-  },
-});
