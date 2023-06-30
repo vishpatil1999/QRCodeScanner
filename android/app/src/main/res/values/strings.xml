@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BarcodeScanner</string>
+    <!-- For Stage Release Build -->
+    <string moduleConfig="true" name="CodePushDeploymentKey">P6edytZeZuTz_NMRDXiVaf7T9zZxJWeU1B5F3</string>
+    <!-- For Prod Release Build -->
+    <!-- <string moduleConfig="true" name="CodePushDeploymentKey">pra7i9tuB9fjPshEO7KJaRqW3qQiKhg4cNoAF</string> -->
 </resources>

@@ -24,6 +24,7 @@ import com.barcodescanner.newarchitecture.components.MainComponentsRegistry;
 import com.barcodescanner.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
+import com.microsoft.codepush.react.CodePush;
 
 /**
  * A {@link ReactNativeHost} that helps you load everything needed for the New Architecture, both
@@ -51,6 +52,7 @@ public class MainApplicationReactNativeHost extends ReactNativeHost {
     //     packages.add(new TurboReactPackage() { ... });
     // If you have custom Fabric Components, their ViewManagers should also be loaded here
     // inside a ReactPackage.
+    new CodePush(getResources().getString(R.string.CodePushDeploymentKey), getApplicationContext(), BuildConfig.DEBUG);
     return packages;
   }
 
@@ -58,6 +60,11 @@ public class MainApplicationReactNativeHost extends ReactNativeHost {
   protected String getJSMainModuleName() {
     return "index";
   }
+
+   @Override
+        protected String getJSBundleFile() {
+            return CodePush.getJSBundleFile();
+        }
 
   @NonNull
   @Override
