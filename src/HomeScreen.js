@@ -14,7 +14,7 @@ export default function HomeScreen({navigation}) {
             </TouchableOpacity>
             <BarcodeScanner showAlertModel={showModal} onClose={onClose} />
             <TouchableOpacity onPress={() =>navigation.navigate('GenerateQRCode')} style={styles.buttonstyle}>
-                <Text style={styles.textStyle}>Press Button to Generate QR code</Text>
+                <Text style={styles.textStyle}>PPressss Button to Generate QR code</Text>
             </TouchableOpacity>
         </View>
     );
