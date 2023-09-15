@@ -54,7 +54,7 @@ export default function BarcodeScanner({ showAlertModel, onClose }) {
                     onRead={onSuccess}
                     topContent={
                         <View>
-                            <Text style={styles.centerText}>Scan the QR code.</Text>
+                            <Text style={styles.centerText}>Scan the QR code.{abx}</Text>
                         </View>
                     }
                 />
