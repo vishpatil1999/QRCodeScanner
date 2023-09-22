@@ -7,9 +7,6 @@ export default function HomeScreen({navigation}) {
     const onClose = () => {
         setShowModal(false)
     }
-    function divide(a, b) {
-  return a / b;
-}
 
 // Calling the divide function with b = 0
 const result = divide(10, 0);
