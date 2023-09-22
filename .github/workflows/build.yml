@@ -6,6 +6,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  scan:
+    if: github.head_ref != 'master' && startsWith(github.head_ref, 'meta/stub-version-') == false
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
