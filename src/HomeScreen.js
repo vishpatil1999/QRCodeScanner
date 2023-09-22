@@ -15,7 +15,7 @@ console.log(result);
     return (
         <View style={{ flex: 1, alignItems: 'center' }}>
             <TouchableOpacity onPress={() => setShowModal(!showModal)} style={styles.buttonstyle}>
-                <Text style={styles.textStyle}>Press Button to Scan QR code</Text>
+                <Text style={styles.textStyle}>Press Button to Scan QR code test</Text>
             </TouchableOpacity>
             <BarcodeScanner showAlertModel={showModal} onClose={onClose} />
             <TouchableOpacity onPress={() =>navigation.navigate('GenerateQRCode')} style={styles.buttonstyle}>
