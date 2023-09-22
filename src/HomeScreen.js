@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginTop: '50%',
         borderRadius: 5,
         elevation: 8,
-         backgroundColor: 'pink',
+        backgroundColor: 'pink',
     },
     textStyle: {
         textAlign: 'center',
