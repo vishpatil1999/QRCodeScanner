@@ -7,6 +7,11 @@ export default function HomeScreen({navigation}) {
     const onClose = () => {
         setShowModal(false)
     }
+
+// Calling the divide function with b = 0
+const result = divide(10, 0);
+console.log(result);
+
     return (
         <View style={{ flex: 1, alignItems: 'center' }}>
             <TouchableOpacity onPress={() => setShowModal(!showModal)} style={styles.buttonstyle}>
@@ -14,7 +19,7 @@ export default function HomeScreen({navigation}) {
             </TouchableOpacity>
             <BarcodeScanner showAlertModel={showModal} onClose={onClose} />
             <TouchableOpacity onPress={() =>navigation.navigate('GenerateQRCode')} style={styles.buttonstyle}>
-                <Text style={styles.textStyle}>Press Button to Generate QR code</Text>
+                <Text style={styles.textStyle}>PPressss Button to Generate QR code</Text>
             </TouchableOpacity>
         </View>
     );
@@ -28,6 +33,7 @@ const styles = StyleSheet.create({
         marginTop: '50%',
         borderRadius: 5,
         elevation: 8,
+         backgroundColor: 'pink',
     },
     textStyle: {
         textAlign: 'center',
